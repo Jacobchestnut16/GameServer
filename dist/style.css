@@ -1,10 +1,11 @@
 :root {
     --bg: #262627;
-    --card: #333333;
+    --card: #3b3b42;
     --border: #252a34;
     --text: #e6e8eb;
     --muted: #9aa4b2;
-    --accent: #5865f2;
+    --accent: #272a2f;
+    --header-text: #478a41;
 }
 
 * {
@@ -13,13 +14,26 @@
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "PingFang SC", "PT Mono", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
     background: var(--bg);
     color: var(--text);
 }
 
+em{
+    color: var(--text) !important;
+}
+
 span{
-    color: var(--text);
+    color: var(--text) !important;
+}
+
+h1 span, h2 span, h3 span, h4 span{
+    color: var(--header-text) !important;
+}
+
+h1, h2, h3, h4{
+    color: var(--header-text) !important;
 }
 
 header {
@@ -86,6 +100,18 @@ footer {
     font-size: 0.9rem;
 }
 
+.join-card{
+    text-align: center;
+    border: 2px solid var(--accent);
+    padding: 0 10px;
+    border-radius: 15px;
+    box-shadow: var(--bg) 2px 2px 14px, var(--bg) -2px 2px 14px, var(--bg) 2px -2px 14px;
+}
+.join-card *{
+    margin: 0;
+    padding: 0;
+}
+
 nav {
     position: fixed;
     top: -25px;
@@ -100,6 +126,7 @@ nav {
     gap: 1rem;
     padding: 0 1rem;
     z-index: 2000;
+    font-size: 17px;
 }
 
 
@@ -112,10 +139,12 @@ nav {
     all: unset;
     color: #e6e8eb;
     background: var(--card);
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 0.1rem;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 0.95rem;
+    /*font-size: 0.95rem;*/
+    font-size: 17px;
+
 }
 
 .dropbtn:hover {
@@ -145,7 +174,7 @@ nav {
 }
 
 .dropdown-content a:hover {
-    background: #252a34;
+    background: #424348;
 }
 
 .dropdown:hover .dropdown-content {

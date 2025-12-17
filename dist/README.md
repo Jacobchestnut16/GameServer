@@ -2,7 +2,7 @@
 
 Gaymers Welcome
 
-Join the discord, and play along
+Join the [discord](https://discord.gg/zvE5SczzAc), and play along
 
 ## Private Server Games
 
