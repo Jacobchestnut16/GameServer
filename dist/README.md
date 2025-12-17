@@ -13,6 +13,11 @@ Join the discord, and play along
   <span>Minecraft Java</span>
 </a>
 
+<a class="game-card" href="#/pages/rimworld">
+  <img src="assets/rimworld.png" alt="RimWorld">
+  <span>RimWorld</span>
+</a>
+
 <a class="game-card" href="#/pages/rust">
   <img src="assets/rust.png" alt="Rust">
   <span>Rust</span>
