@@ -1,5 +1,6 @@
 - [Servers](pages/servers.md)
   - [Minecraft](pages/minecraft.md)
   - [Rust](pages/rust.md)
+  - [Rimworld](pages/rimworld.md)
 - Discord
   - [Overview](pages/discord.md)
