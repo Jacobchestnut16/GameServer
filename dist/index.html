@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>JakeByte Survivors</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -10,11 +10,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app"></div>
+  <nav>
+    <div class="left">
+      <a href="#">JakeByte Survivors</a>
+    </div>
+
+    <div class="right">
+      <div class="dropdown">
+        <button class="dropbtn">Servers</button>
+        <div class="dropdown-content">
+          <a href="#/pages/servers">All</a>
+          <a href="#/pages/minecraft">Minecraft</a>
+          <a href="#/pages/rust">Rust</a>
+        </div>
+      </div>
+
+      <a href="#/pages/discord">Discord</a>
+    </div>
+  </nav>
+  <div id="app">Loading ...</div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'JakeByte Survivors Servers',
+      repo: '',
+      loadSidebar: false,
+      subMaxLevel: 0,
+      auto2top: true,
+      hideSidebar: true,
+      themeColor: '#284026',
     }
   </script>
   <!-- Docsify v4 -->

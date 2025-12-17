@@ -1,4 +1,5 @@
-Live status for Rust, Minecraft, and Discord.
+# All Servers
+Live status for Rust, Minecraft.
 
 ---
 

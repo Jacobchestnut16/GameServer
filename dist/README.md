@@ -1,50 +1,72 @@
 # JakeByte Survivors Servers
 
-Live status for Rust, Minecraft, and Discord.
+Gaymers Welcome
 
----
+Join the discord, and play along
 
-## Rust Servers
+## Private Server Games
 
-<div class="grid">
-  <iframe
-    src="https://srv1203671.hstgr.cloud/c/7f2f042a"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe>
+<div class="game-grid">
+
+<a class="game-card" href="#/pages/minecraft">
+  <img src="assets/minecraft.png" alt="Minecraft Java Edition">
+  <span>Minecraft Java</span>
+</a>
+
+<a class="game-card" href="#/pages/rust">
+  <img src="assets/rust.png" alt="Rust">
+  <span>Rust</span>
+</a>
+
 </div>
 
----
+# Discord Plays
 
-## Minecraft Servers
+<div class="game-grid">
 
-<div class="grid">
-  <iframe
-    src="https://srv1203671.hstgr.cloud/c/76da2327"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe>
+<a class="game-card">
+  <img src="assets/cod-bo7.png" alt="Call of Duty Black Ops 7">
+  <span>COD: Black Ops 7</span>
+</a>
 
-<iframe
-src="https://srv1203671.hstgr.cloud/c/1fdfe789"
-allowtransparency="true"
-sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-</iframe>
+<a class="game-card">
+  <img src="assets/cod-bo6.png" alt="Call of Duty Black Ops 6">
+  <span>COD: Black Ops 6</span>
+</a>
+
+<a class="game-card" href="#/pages/rust">
+  <img src="assets/rust.png" alt="Rust">
+  <span>Rust</span>
+</a>
+
+<a class="game-card">
+  <img src="assets/cod-coldwar.png" alt="Call of Duty Black Ops Cold War">
+  <span>COD: Cold War</span>
+</a>
+
+<a class="game-card">
+  <img src="assets/cod-mw3.png" alt="Call of Duty Modern Warfare III">
+  <span>Modern Warfare III</span>
+</a>
+
+<a class="game-card" href="#/pages/minecraft">
+  <img src="assets/minecraft.png" alt="Minecraft Java Edition">
+  <span>Minecraft Java</span>
+</a>
+
+<a class="game-card">
+  <img src="assets/peak.png" alt="Peak">
+  <span>Peak</span>
+</a>
+
+<a class="game-card">
+  <img src="assets/sons-of-the-forest.png" alt="Sons of the Forest">
+  <span>Sons of the Forest</span>
+</a>
+
+
+
 </div>
-
----
-
-## Discord
-
-<iframe
-src="https://discord.com/widget?id=1175153746624389130&theme=dark"
-allowtransparency="true"
-sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-style="width:100%;height:600px;border-radius:8px;border:none;background:#000;">
-</iframe>
 
 ---
 
