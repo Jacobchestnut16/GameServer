@@ -1,6 +1,6 @@
 ## Discord
 
-See who's online now:
+See who's online now or [Join now](https://discord.gg/zvE5SczzAc):
 
 <iframe
 src="https://discord.com/widget?id=1175153746624389130&theme=dark"

@@ -1,6 +1,6 @@
 # RimWorld Servers
 
-Live status for RimWorld.
+Server stats and join-able links/ip-addresses
 
 ---
 

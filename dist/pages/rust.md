@@ -1,6 +1,6 @@
 # Rust Servers
 
-Live status for Rust.
+Server stats and join-able links/ip-addresses
 
 ---
 
@@ -12,3 +12,7 @@ Live status for Rust.
     style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
   </iframe>
 </div>
+
+---
+
+© JakeByte Survivors
