@@ -1,8 +1,7 @@
-Live status for Rust, Minecraft, and Discord.
+# Minecraft servers
+Live status for Minecraft.
 
 ---
-
-## Minecraft Servers
 
 <div class="grid">
   <iframe

@@ -1,4 +1,4 @@
-- Servers
+- [Servers](pages/servers.md)
   - [Minecraft](pages/minecraft.md)
   - [Rust](pages/rust.md)
 - Discord
