@@ -4,28 +4,57 @@ Server stats and join-able links/ip-addresses
 
 ---
 
-<div class="grid">
-<div class="join-card">
-  <iframe
-    src="https://srv1203671.hstgr.cloud/c/76da2327"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe>
-<h4>V 1.21.4</h4>
-</div>
+# Minecraft Servers
 
-<div class="join-card">
-  <iframe
-    src="https://srv1203671.hstgr.cloud/c/1fdfe789"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe>
-<a href="https://www.curseforge.com/minecraft/modpacks/crash-landing">Curse Forge Download Link</a>
-</div>
+<div class="game-grid" id="cards"></div>
 
-</div>
+<script>
+const GAME_NAME = "Minecraft";
+
+async function loadGameCards() {
+  const container = document.getElementById("cards");
+
+  try {
+    // Fetch server data
+    const res = await fetch(`https://gameservers.chestnutsprogramming.com/instances/servers/${GAME_NAME}`);
+    const servers = await res.json();
+
+    // Fetch background image
+    const imgRes = await fetch(`https://gameservers.chestnutsprogramming.com/images/${GAME_NAME}`);
+    const imgData = await imgRes.json();
+    const bgImage = imgData["image-assets"];
+
+    container.innerHTML = servers.map(s => `
+      <div class="game-card" data-url="${s["Game-URL"]}">
+        <img src="/assets/${bgImage}" alt="${s.Name}">
+        <span class="dark">
+          <h4>${s.Name}</h4><br>
+          Game: ${s.Game}<br>
+          Port: ${s.Port}<br>
+          Status: ${s.State ? 'Online' : 'Offline'}<br>
+          Players: ${s.Active_Users} / ${s.Max_Users}<br>
+          <button class="copy-btn">Copy URL</button>
+        </span>
+      </div>
+    `).join('');
+
+    // Add click handlers to copy buttons
+    document.querySelectorAll(".copy-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const url = e.target.closest(".game-card").dataset.url;
+        navigator.clipboard.writeText(url)
+          .then(() => alert(`Copied: ${url}`))
+          .catch(err => alert("Failed to copy URL: " + err));
+      });
+    });
+
+  } catch (err) {
+    container.innerHTML = `<p style="color:red;">Failed to load servers: ${err}</p>`;
+  }
+}
+
+loadGameCards();
+</script>
 
 ---
 

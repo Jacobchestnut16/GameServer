@@ -6,6 +6,7 @@
     --muted: #9aa4b2;
     --accent: #272a2f;
     --header-text: #478a41;
+    --game-title: #8ddf41;
 }
 
 * {
@@ -34,6 +35,10 @@ h1 span, h2 span, h3 span, h4 span{
 
 h1, h2, h3, h4{
     color: var(--header-text) !important;
+}
+
+span h4{
+    color: var(--game-title) !important;
 }
 
 header {
@@ -221,16 +226,23 @@ main{
     transition: transform 0.25s ease;
 }
 
+.dark{
+    background: linear-gradient(to top, rgb(0,0,0), rgb(0,0,0,0.55)) !important;
+}
+
+
 .game-card span {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0.7rem 0.9rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.35));
     color: #fff;
     font-weight: 600;
     font-size: 0.9rem;
+    box-shadow: rgba(0,0,0,0.65) -5px -10px 20px;
+    box-shadow: rgba(0,0,0,0.65) -5px -10px 20px;
 }
 
 .game-card:hover img {
