@@ -6,24 +6,42 @@ Join the [discord](https://discord.gg/zvE5SczzAc), and play along
 
 ## Private Server Games
 
-<div class="game-grid">
+<div class="game-grid" id="cards"></div>
 
-<a class="game-card" href="#/pages/minecraft">
-  <img src="assets/minecraft.png" alt="Minecraft Java Edition">
-  <span>Minecraft Java</span>
-</a>
+<script>
+async function loadGameCards() {
+  const container = document.getElementById("cards");
 
-<a class="game-card" href="#/pages/rimworld">
-  <img src="assets/rimworld.png" alt="RimWorld">
-  <span>RimWorld</span>
-</a>
+  try {
+    // Fetch server data
+    const res = await fetch(`https://gameservers.chestnutsprogramming.com/instances/games`);
+    const servers = await res.json();
+    const uniqueArr = [...new Set(servers)];
 
-<a class="game-card" href="#/pages/rust">
-  <img src="assets/rust.png" alt="Rust">
-  <span>Rust</span>
-</a>
+    uniqueArr.forEach(gameCardServe);
 
-</div>
+    async function gameCardServe(item, index) {
+
+        const imgRes = await fetch(`https://gameservers.chestnutsprogramming.com/images/${item}`);
+        const imgData = await imgRes.json();
+        const bgImage = imgData["image-assets"];
+        var link = `#/pages/${item}`;
+        if (item === 'Open World - RimWorld Server') link = '#/pages/rimworld';
+
+        container.innerHTML += `
+        <a class="game-card" href="${link}">
+          <img src="assets/${bgImage}" alt="${item}">
+          <span>${item}</span>
+        </a>`
+    }
+
+  } catch (err) {
+    container.innerHTML = `<p style="color:red;">Failed to load servers: ${err}</p>`;
+  }
+}
+
+loadGameCards();
+</script>
 
 # Discord Plays
 
