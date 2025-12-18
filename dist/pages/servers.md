@@ -3,58 +3,75 @@ Server stats and join-able links/ip-addresses
 
 ---
 
-## Rust Servers
+<div id="all-servers"></div>
 
-<div class="grid">
-<div class="join-card">  <iframe
-    src="https://srv1203671.hstgr.cloud/c/7f2f042a"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe></div>
+<script>
+async function loadAllServers() {
+  const container = document.getElementById("all-servers");
+  container.innerHTML = "";
 
-</div>
+  try {
+    const res = await fetch("https://gameservers.chestnutsprogramming.com/instances/servers");
+    const allServers = await res.json();
 
+    for (const [gameName, servers] of Object.entries(allServers)) {
 
-## Minecraft Servers
+      // Create section
+      const section = document.createElement("section");
+      section.style.marginBottom = "2rem";          // space between games
+      section.style.padding = "1rem";
+      section.style.border = "1px solid var(--border)";
+      section.style.borderRadius = "12px";
+      section.style.background = "var(--card)";
+      section.innerHTML = `<h2>${gameName}</h2><div class="game-grid"></div>`;
+      const grid = section.querySelector(".game-grid");
 
-<div class="grid">
-<div class="join-card">
-  <iframe
-    src="https://srv1203671.hstgr.cloud/c/76da2327"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe>
-<h4>V 1.21.4</h4>
-</div>
+      // Fetch background image
+      let bgImage = "default.png";
+      try {
+        const imgRes = await fetch(`https://gameservers.chestnutsprogramming.com/images/${encodeURIComponent(gameName)}`);
+        const imgData = await imgRes.json();
+        bgImage = imgData["image-assets"];
+      } catch (err) {
+        console.warn(`Failed to load image for ${gameName}:`, err);
+      }
 
-<div class="join-card">
-  <iframe
-    src="https://srv1203671.hstgr.cloud/c/1fdfe789"
-    allowtransparency="true"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-  </iframe>
-<a href="https://www.curseforge.com/minecraft/modpacks/crash-landing">Curse Forge Download Link</a>
-</div>
-</div>
+      // Create cards
+      grid.innerHTML = servers.map(s => `
+        <div class="game-card" data-url="${s["Game-URL"]}">
+          <img src="/assets/${bgImage}" alt="${s.Name}">
+          <span class="dark">
+            <h4>${s.Name}</h4><br>
+            Game: ${s.Game}<br>
+            Port: ${s.Port}<br>
+            Status: ${s.State ? 'Online' : 'Offline'}<br>
+            Players: ${s.Active_Users} / ${s.Max_Users}<br>
+            <button class="copy-btn">Copy URL</button>
+          </span>
+        </div>
+      `).join('');
 
+      // Copy button functionality
+      grid.querySelectorAll(".copy-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const url = e.target.closest(".game-card").dataset.url;
+          navigator.clipboard.writeText(url)
+            .then(() => alert(`Copied: ${url}`))
+            .catch(err => alert("Failed to copy URL: " + err));
+        });
+      });
 
-## RimWorld Servers
+      container.appendChild(section);
+    }
 
-<div class="grid">
-<div class="join-card">
+  } catch (err) {
+    container.innerHTML = `<p style="color:red;">Failed to load servers: ${err}</p>`;
+  }
+}
 
-<iframe
-src="https://srv1203671.hstgr.cloud/c/21681306"
-allowtransparency="true"
-sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-style="width:100%;height:500px;border-radius:8px;border:none;background:#000;">
-</iframe>
-</div>
+loadAllServers();
+</script>
 
-</div>
 
 ---
 
