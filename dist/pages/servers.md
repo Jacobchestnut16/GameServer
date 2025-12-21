@@ -11,7 +11,7 @@ async function loadAllServers() {
   container.innerHTML = "";
 
   try {
-    const res = await fetch("https://gameservers.chestnutsprogramming.com/instances/servers");
+    const res = await fetch("https://gameservers.chestnutsprogramming.com/ptero/servers");
     const allServers = await res.json();
 
     for (const [gameName, servers] of Object.entries(allServers)) {
@@ -38,17 +38,16 @@ async function loadAllServers() {
 
       // Create cards
       grid.innerHTML = servers.map(s => `
-        <div class="game-card" data-url="${s["Game-URL"]}">
-          <img src="/assets/${bgImage}" alt="${s.Name}">
-          <span class="dark">
-            <h4>${s.Name}</h4><br>
-            Game: ${s.Game}<br>
-            Port: ${s.Port}<br>
-            Status: ${s.State ? 'Online' : 'Offline'}<br>
-            Players: ${s.Active_Users} / ${s.Max_Users}<br>
-            <button class="copy-btn">Copy URL</button>
-          </span>
-        </div>
+      <div class="game-card" data-url="${s["ip"]}:${s["port"]}">
+        <img src="/assets/${bgImage}" alt="${s.title}">
+        <span class="dark">
+          <h4>${s.title}</h4><br>
+          Game: ${s.game}<br>
+          Port: ${s.port}<br>
+          Status: ${s.state}<br>
+          <button class="copy-btn">Copy URL</button>
+        </span>
+      </div>
       `).join('');
 
       // Copy button functionality
