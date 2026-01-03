@@ -248,3 +248,13 @@ main{
 .game-card:hover img {
     transform: scale(1.05);
 }
+
+.success{
+    color: #268526;
+}
+.warn{
+    color: #c18f32;
+}
+.fail{
+    color: #cd4444;
+}
