@@ -31,7 +31,16 @@ async function loadGameCards() {
           <h4>${s.title}</h4><br>
           Game: ${s.game}<br>
           Port: ${s.port}<br>
-          Status: ${s.state}<br>
+            <div style="display:flex; gap: 5px;">
+            Status:  <div class="${
+                        s.state === "running" 
+                        ? "success" 
+                        : (
+                            s.state === "offline" 
+                            ? "fail" 
+                            : "warn")
+                        }">${s.state}</div>
+            </div>
           <button class="copy-btn">Copy URL</button>
         </span>
       </div>
