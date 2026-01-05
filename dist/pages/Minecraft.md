@@ -1,10 +1,10 @@
 # Minecraft servers
 
-Server stats and join-able links/ip-addresses
+Server stats and join-able links/ip-addresses, just press `Copy URL` and paste that into multiplayer
 
 ---
 
-# Minecraft Servers
+# Servers List
 
 <div class="game-grid" id="cards"></div>
 

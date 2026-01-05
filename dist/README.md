@@ -56,9 +56,14 @@ loadGameCards();
   <span class="dark">COD: Black Ops 6</span>
 </a>
 
-<a class="game-card" href="#/pages/rust">
+<a class="game-card" href="#/pages/Rust">
   <img src="assets/rust.png" alt="Rust">
   <span class="dark">Rust</span>
+</a>
+
+<a class="game-card" href="#/pages/ARK">
+  <img src="assets/ark.png" alt="Ark">
+  <span class="dark">ARK - Survival Ascended</span>
 </a>
 
 <a class="game-card">
@@ -71,7 +76,7 @@ loadGameCards();
   <span class="dark">Modern Warfare III</span>
 </a>
 
-<a class="game-card" href="#/pages/minecraft">
+<a class="game-card" href="#/pages/Minecraft">
   <img src="assets/minecraft.png" alt="Minecraft Java Edition">
   <span class="dark">Minecraft Java</span>
 </a>
