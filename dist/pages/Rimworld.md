@@ -4,7 +4,8 @@ Server stats and join-able links/ip-addresses
 
 ---
 
-# RimWorld Servers
+# Servers List
+
 
 <div class="game-grid" id="cards"></div>
 

@@ -1,20 +1,15 @@
-# Rust
+# ARK servers
 
-Server stats and join-able links/ip-addresses, 
-just press `Copy URL`
-In the game: 
-Open Console by pressing the `F1` key. Type the following command
-`client.connect ` followed by the url you copied.
-
+Server stats and join-able links/ip-addresses
 
 ---
-# Servers List
 
+# Servers List
 
 <div class="game-grid" id="cards"></div>
 
 <script>
-const GAME_NAME = "Rust";
+const GAME_NAME = "ARK";
 
 async function loadGameCards() {
   const container = document.getElementById("cards");
@@ -45,6 +40,9 @@ async function loadGameCards() {
                             ? "fail" 
                             : "warn")
                         }">${s.state}</div>
+            </div>
+            <div style="display:flex; gap: 5px;">
+            Description:  <p>${s.description}</p>
             </div>
           <button class="copy-btn">Copy URL</button>
         </span>
