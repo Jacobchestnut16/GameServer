@@ -86,8 +86,8 @@ loadGameCards();
   <span class="dark">Peak</span>
 </a>
 
-<a class="game-card">
-  <img src="assets/sons-of-the-forest.png" alt="Sons of the Forest">
+<a class="game-card" href="pages/forest.md">
+  <img src="assets/forest.png" alt="Sons of the Forest">
   <span class="dark">Sons of the Forest</span>
 </a>
 
